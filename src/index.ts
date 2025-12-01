@@ -1,9 +1,9 @@
+import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import http from 'http';
 import { WebSocketServer } from 'ws';
 import { PrismaClient } from '@prisma/client';
-import dotenv from 'dotenv';
 
 // Importar middlewares
 import { authMiddleware } from './middleware/auth.middleware';
@@ -23,9 +23,6 @@ import giftRoutes from './routes/gift.routes';
 
 // Importar servicio de WebSocket
 import { handleWebSocketConnection } from './services/websocket.service';
-
-// Cargar variables de entorno
-dotenv.config();
 
 const app = express();
 const server = http.createServer(app);
